@@ -82,9 +82,14 @@ tasks.register<JavaCompile>("compileDebugJava") {
     group = "build"
     description = "Compiles debug Java sources."
     dependsOn("linkDebugResources")
-    source = fileTree(appDir.dir("src/main/java")) { include("**/*.java") }
+    source(
+        fileTree(appDir.dir("src/main/java")) { include("**/*.java") },
+        generatedDir,
+    )
     classpath = files(androidJar, generatedDir)
     destinationDirectory.set(classesDir)
+    sourceCompatibility = JavaVersion.VERSION_17.toString()
+    targetCompatibility = JavaVersion.VERSION_17.toString()
     options.release.set(17)
 }
 
