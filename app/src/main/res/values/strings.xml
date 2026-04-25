@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeatherChange</string>
+    <string name="briefing_summary">Your personal weather briefing starts here.</string>
+    <string name="briefing_next_step">Weather data, location, and daily planning tools are ready to be added next.</string>
+</resources>
